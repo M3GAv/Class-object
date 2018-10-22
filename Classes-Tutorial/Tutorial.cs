@@ -5,15 +5,26 @@ using System.Text;
 
 namespace Classes_Tutorial
 {
-    class Tutorial
+    public class Tutorial
     {
-        int TutorialID;    // <- defining the fields of the class
-        string TutorialName; // <-    -||-
+        protected int TutorialID;    // <- defining the fields of the class
+        protected string TutorialName; // <-    -||-
+        public Tutorial()
+        {
+            TutorialID = 0;
+            TutorialName = "Default";
+        }
+
 
         public void SetTutorial(int pID, string pName) // <- defining the set tutorial method
         {
             TutorialID = pID; // <- setting the fields values
             TutorialName = pName; // <-     -||-
+        }
+
+        public void SetTutorial(String pName)
+        {
+            TutorialName = pName; // <- setting the fields values
         }
 
         public String GetTutorialName() // defining the get tutorial name method
@@ -26,4 +37,13 @@ namespace Classes_Tutorial
             return TutorialID; // returning the TutorialID
         }
     }
+
+    public class MyTutorial : Tutorial
+    {
+        public void RenameTutorial(String pNewName)
+        {
+            TutorialName = pNewName;
+        }
+    }
+
 }

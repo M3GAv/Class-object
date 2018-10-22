@@ -9,15 +9,13 @@ namespace Classes_Tutorial
     {
         static void Main(string[] args)
         {
-            Tutorial pTutor = new Tutorial(); // <- creating a new tutorial object
-            pTutor.SetTutorial(1, ".Net"); // <- calling the set tutorial method
+            Tutorial pTutor = new Tutorial();
+            pTutor.SetTutorial(1,"First Tutorial");
+            Console.WriteLine(pTutor.GetTutorialName());
 
-            Console.Write(pTutor.GetTutorialID()); // <- calling the get tutorial id method
-            Console.WriteLine(pTutor.GetTutorialName()); // <- calling the get tutorial name method
+            pTutor.SetTutorial("Second Tutorial");
+            Console.WriteLine(pTutor.GetTutorialName());
 
-            Tutorial test = new Tutorial(); // <- creating a new tutorial object
-            test.SetTutorial(6, "Testing"); // <- calling the set tutorial method
-            Console.WriteLine("{0} {1}",test.GetTutorialID(),test.GetTutorialName()); // <- calling tutorial id method and tutorail name method
         }
     }
 }
